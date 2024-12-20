@@ -13,6 +13,9 @@ async function predictClassification(model, image) {
     const score = await prediction.data();
     const confidenceScore = Math.max(...score) * 100;
 
+    //console.log("score: ", score);
+    //console.log("confidenceScore: ", confidenceScore);
+
     const label = confidenceScore <= 50 ? "Non-cancer" : "Cancer";
     let suggestion;
 
